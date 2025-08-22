@@ -8,8 +8,6 @@
 An end-to-end web application where users can raise support tickets and an AI agent triages them by classifying the issue, fetching relevant knowledge-base articles, drafting a reply, and either auto-resolving or assigning it to a human support agent.
 
 ## 📋 Table of Contents
-
-  - [Live Demo](https://www.google.com/search?q=%23-live-demo)
   - [✨ Key Features](https://www.google.com/search?q=%23-key-features)
   - [🏗️ Architecture](https://www.google.com/search?q=%23%EF%B8%8F-architecture)
   - [🛠️ Tech Stack](https://www.google.com/search?q=%23%EF%B8%8F-tech-stack)
@@ -18,12 +16,6 @@ An end-to-end web application where users can raise support tickets and an AI ag
   - [🔌 API Endpoints](https://www.google.com/search?q=%23-api-endpoints)
   - [🧪 Testing](https://www.google.com/search?q=%23-testing)
   - [📂 Project Structure & File Breakdown](https://www.google.com/search?q=%23-project-structure--file-breakdown)
-
------
-
-## 🎥 Live Demo
-
-  - **Live Application:** `[Link to your deployed Vercel/Netlify/Cloud URL]`
 
 -----
 
