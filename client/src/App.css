@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-bg: #0a101f;
+  --color-surface: #10182c;
+  --color-accent: #00d4ff;
+  --color-accent-rgb: 0, 212, 255;
+  --color-glass-bg: rgba(20, 30, 45, 0.65);
+  --color-glass-border: rgba(var(--color-accent-rgb), 0.15);
+  --color-text-primary: #e6f1ff;
+  --color-text-secondary: #a8b2c0;
+  --color-success: #56d364;
+  --color-danger: #f85149;
+  --color-warning: #f29d20;
+  --color-info: #58a6ff;
+
+  --font-family-sans: "Inter", sans-serif;
+  --border-radius: 0.75rem;
+  --backdrop-blur: blur(16px);
+}
+
+body {
+  background-color: var(--color-bg);
+  background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.04) 1px,
+      transparent 0
+    ),
+    radial-gradient(
+      ellipse at top left,
+      rgba(var(--color-accent-rgb), 0.1),
+      transparent 50%
+    );
+  background-size: 25px 25px, auto;
+  color: var(--color-text-primary);
+  font-family: var(--font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a:hover {
+  color: var(--color-accent);
+  filter: brightness(1.2);
+}
+
+/* --- FIX: Universal Text Color & Contrast --- */
+.card-title,
+.modal-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.form-label,
+.page-title,
+strong {
+  color: var(--color-text-primary) !important;
+}
+p,
+.card-text,
+.text-muted,
+.blockquote-footer,
+.form-text,
+small {
+  color: var(--color-text-secondary) !important;
+}
+
+/* --- Core Component Overrides --- */
+.glass-panel,
+.card,
+.modal-content,
+.alert {
+  background: var(--color-glass-bg) !important;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--color-glass-border) !important;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card-header,
+.modal-header {
+  background-color: transparent !important;
+  border-bottom: 1px solid var(--color-glass-border) !important;
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+}
+.btn-primary {
+  background-color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  color: #0a1929;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(var(--color-accent-rgb), 0.5);
+}
+
+.form-control,
+.form-select {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--color-glass-border);
+  color: var(--color-text-primary);
+  padding: 0.75rem 1rem;
+}
+.form-control::placeholder,
+.form-select::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.7;
+}
+.form-control:focus,
+.form-select:focus {
+  background: rgba(0, 0, 0, 0.3);
+  color: var(--color-text-primary);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.4);
+}
+.form-check-input:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--color-accent);
+}
+.form-range::-moz-range-thumb {
+  background: var(--color-accent);
+}
+
+.dropdown-menu {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-glass-border);
+  backdrop-filter: var(--backdrop-blur);
+}
+.dropdown-item {
+  color: var(--color-text-primary);
+}
+.dropdown-item:hover {
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  color: var(--color-accent);
+}
+
+.btn-close {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+.spinner-border,
+.spinner-grow {
+  color: var(--color-accent);
+}
+
+/* --- Layout & Custom Components --- */
+.navbar {
+  background: var(--color-glass-bg) !important;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--border-radius);
+  width: calc(100% - 2rem);
+  max-width: 1280px;
+  margin: 1rem auto;
+  transition: all 0.3s ease;
+}
+.nav-link.active {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.page-header {
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-glass-border);
+}
+.page-header h1,
+.page-title {
+  font-weight: 700;
+  text-shadow: 0 0 15px rgba(var(--color-accent-rgb), 0.3);
+}
+
+.centered-spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+}
+
+.status-badge {
+  font-size: 0.8rem;
+  padding: 0.4em 0.9em;
+  border-radius: 50px;
+  font-weight: 600;
+  text-transform: capitalize;
+  border: 1px solid;
+}
+/* Colors defined in previous response are fine, no change needed here */
+.status-open,
+.status-triaged {
+  color: var(--color-info);
+  border-color: var(--color-info);
+  background-color: rgba(88, 166, 255, 0.1);
+}
+.status-waiting-human {
+  color: var(--color-warning);
+  border-color: var(--color-warning);
+  background-color: rgba(242, 157, 32, 0.1);
+}
+.status-waiting-customer {
+  color: #c39eff;
+  border-color: #c39eff;
+  background-color: rgba(195, 158, 255, 0.1);
+}
+.status-resolved,
+.status-closed {
+  color: var(--color-success);
+  border-color: var(--color-success);
+  background-color: rgba(86, 211, 100, 0.1);
+}
+
+/* --- Ticket Detail Page --- */
+.conversation-entry {
+  padding: 1rem 1.25rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  border: 1px solid transparent;
+}
+.conversation-entry.actor-user {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.conversation-entry.actor-agent,
+.conversation-entry.actor-admin {
+  background-color: rgba(var(--color-accent-rgb), 0.05);
+  border-color: rgba(var(--color-accent-rgb), 0.15);
+}
+.conversation-entry.actor-system {
+  background-color: rgba(86, 211, 100, 0.05);
+  border-color: rgba(86, 211, 100, 0.15);
+}
+.conversation-entry .author {
+  font-weight: 700;
+}
+.conversation-entry .timestamp {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+/* --- Audit Timeline --- */
+.timeline-item {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  border-left: 2px solid var(--color-glass-border);
+}
+.timeline-item:last-child {
+  border-left: 2px solid transparent;
+  padding-bottom: 0;
+}
+.timeline-icon {
+  position: absolute;
+  left: -11px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(var(--color-accent-rgb), 0.7);
+}
+/* --- Auth Page Specific --- */
+.auth-container {
+  display: flex;
+  align-items: center;
+  min-height: 80vh; /* Pushes the form down from the navbar */
+}
+
+.password-toggle-btn {
+  border-color: var(--color-glass-border);
+  color: var(--color-text-secondary);
+}
+
+.password-toggle-btn:hover {
+  background-color: rgba(var(--color-accent-rgb), 0.1);
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
